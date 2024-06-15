@@ -1,0 +1,112 @@
+/* Styles/HelloWorld.module.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hello {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  background-color: #fff200;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%; /* Usando uma porcentagem para largura */
+  max-width: 350px; /* Limitando a largura máxima para telas maiores */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  animation: fadeIn 2s ease-in-out, float 3s ease-in-out infinite;
+}
+
+.footer {
+  text-align: center;
+  background-color: #fff200;
+  padding: 10px;
+  width: 100vw; /* Usar 100% para ocupar toda a largura disponível */
+  box-sizing: border-box; /* Garante que padding esteja incluído na largura total */
+}
+
+.footer p{
+  /* ↑ Estilo do texto do footer. */
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-decoration: none; 
+  font-weight: bold;
+}
+  
+
+.language-buttons button {
+  /* ↑ Estilo para o os alteradores de linguagem. */
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 0, 0); /* ← ou a cor desejada para o texto */
+  text-decoration: none;
+  cursor: pointer; /* ← Ponteiro do mouse personalizado. */
+  padding: 10px; /* ← Espaçamento interno entre os botões */
+  font-family: "Raleway", sans-serif;
+}
+
+.language-buttons button:last-child {
+  /* ↑ último botão. */
+  margin-right: 0; /* ← Remove a margem do último botão */
+}
+
+.language-buttons button.active {
+  /* ↑ Adicione estilos específicos para o botão ativo se desejar */
+  font-weight: bold;
+}
+
+/* Exemplo de media query para telas menores */
+@media (max-width: 768px) {
+  .hello {
+    font-size: 2.5rem;
+    padding: 15px 25px;
+  }
+}
